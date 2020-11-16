@@ -1,6 +1,8 @@
 import express from 'express';
 // REQ / RES
 
+import './database/connection';
+
 const app = express();
 
 app.use(express.json());
@@ -23,7 +25,7 @@ app.use(express.json());
 // Route Params: http//localhost:3333/users/1 (Identificar um recurso)
 // Body: http//localhost:3333/users/1 (parametros vindos de um formulario)
 
-app.get("/users/:id", (request, response) => {
+app.get("/users", (request, response) => {
     return response.json({ message: 'Hello World' });
 });
 
