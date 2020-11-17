@@ -21,6 +21,8 @@ const routes = Router();
 // Route Params: http//localhost:3333/users/1 (Identificar um recurso)
 // Body: http//localhost:3333/users/1 (parametros vindos de um formulario)
 
+routes.get("/orphanages", OrphanagesController.index);
+routes.get("/orphanages/:id", OrphanagesController.show);
 routes.post("/orphanages", OrphanagesController.create);
 
 export default routes;
