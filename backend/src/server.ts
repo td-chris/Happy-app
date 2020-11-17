@@ -25,7 +25,9 @@ app.use(express.json());
 // Route Params: http//localhost:3333/users/1 (Identificar um recurso)
 // Body: http//localhost:3333/users/1 (parametros vindos de um formulario)
 
-app.get("/users", (request, response) => {
+app.post("/orphanages", (request, response) => {
+    
+    
     return response.json({ message: 'Hello World' });
 });
 
