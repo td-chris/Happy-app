@@ -1,7 +1,7 @@
 import React from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { FiClock, FiInfo, FiArrowLeft } from "react-icons/fi";
-import { Map, Marker, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { useHistory } from 'react-router-dom';
 import L from 'leaflet';
 
@@ -62,8 +62,8 @@ export default function Orphanage() {
             <p>Presta assistência a crianças de 06 a 15 anos que se encontre em situação de risco e/ou vulnerabilidade social.</p>
 
             <div className="map-container">
-              <Map 
-                center={[-27.2092052,-49.6401092]} 
+              <MapContainer 
+                center={[-23.7075159,-46.4164853]} 
                 zoom={16} 
                 style={{ width: '100%', height: 280 }}
                 dragging={false}
@@ -72,11 +72,13 @@ export default function Orphanage() {
                 scrollWheelZoom={false}
                 doubleClickZoom={false}
               >
-                <TileLayer 
+
+                <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+                {/* <TileLayer 
                   url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-                />
-                <Marker interactive={false} icon={happyMapIcon} position={[-27.2092052,-49.6401092]} />
-              </Map>
+                /> */}
+                <Marker interactive={false} icon={happyMapIcon} position={[-23.7075159,-46.4164853]} />
+              </MapContainer>
 
               <footer>
                 <a href="">Ver rotas no Google Maps</a>

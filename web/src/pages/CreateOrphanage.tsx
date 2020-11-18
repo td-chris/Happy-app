@@ -1,5 +1,5 @@
 import React from "react";
-import { Map, Marker, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 import L from 'leaflet';
 import { useHistory } from "react-router-dom";
 
@@ -37,17 +37,19 @@ export default function CreateOrphanage() {
           <fieldset>
             <legend>Dados</legend>
 
-            <Map 
-              center={[-27.2092052,-49.6401092]} 
+            <MapContainer 
+              center={[-23.7075159,-46.4164853]} 
               style={{ width: '100%', height: 280 }}
               zoom={15}
             >
-              <TileLayer 
-                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
-              />
 
-              <Marker interactive={false} icon={happyMapIcon} position={[-27.2092052,-49.6401092]} />
-            </Map>
+              <TileLayer url="https://a.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+              {/* <TileLayer 
+                url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`}
+              /> */}
+
+              <Marker interactive={false} icon={happyMapIcon} position={[-23.7075159,-46.4164853]} />
+            </MapContainer>
 
             <div className="input-block">
               <label htmlFor="name">Nome</label>
